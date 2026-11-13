@@ -1,4 +1,4 @@
-# CVAT — bảng tra nhanh cho Lab Ngày 5
+# CVAT - bảng tra nhanh cho Lab Ngày 5
 
 Bảng phím đầy đủ trong CVAT: bấm `F1`.
 

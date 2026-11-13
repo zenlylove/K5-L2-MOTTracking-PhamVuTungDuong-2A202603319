@@ -55,3 +55,4 @@ Nếu CVAT lỗi, mất dữ liệu, hay không xuất được file:
 3. Ghi lại trong mục **5. Khó khăn** của báo cáo kèm ảnh.
 
 Có bằng chứng thì không bị trừ điểm vì lỗi hệ thống.
+

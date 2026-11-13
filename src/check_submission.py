@@ -12,6 +12,53 @@ chồng nhau, keyframe quá dày) để bạn mở lại CVAT kiểm tra.
 
 Quy ước số frame: script in số frame theo CVAT (bắt đầu từ 0, giống thanh
 frame trên giao diện). Trong gt.txt, frame_id = frame CVAT + 1.
+
+
+
+Số frame in theo CVAT (bắt đầu từ 0). Trong gt.txt, frame_id = frame CVAT + 1.
+
+=== File MOT 1.1: PhamVuTungDuong_mot.zip ===
+  Số track ID: 5   |   Tổng số box: 653
+  [OK]        Đúng 5 track ID.
+
+  Track | Frame có mặt | Số frame | Đoạn vắng (outside)
+      1 |   0–149      |      150 | -
+      2 |   0–149      |      150 | -
+      3 |   0–149      |      138 | 120–121, 137–146
+      4 |   0–139      |      126 | 110–122, 135
+      5 |  61–149      |       89 | -
+
+  [CẢNH BÁO]  Track 2: chiều cao box đổi > 30% trong 1 frame ở frame [1]. Kiểm tra box co giật (co box theo phần nhìn thấy?).
+  [CẢNH BÁO]  Track 3: chiều cao box đổi > 30% trong 1 frame ở frame [118, 125, 148, 149]. Kiểm tra box co giật (co box theo phần nhìn thấy?).
+  [CẢNH BÁO]  Track 4: box nhảy xa trong 1 frame ở frame [128]. Kiểm tra id_switch hoặc keyframe đặt nhầm người.
+  [CẢNH BÁO]  Track 4: chiều cao box đổi > 30% trong 1 frame ở frame [124, 126, 127, 129, 130]. Kiểm tra box co giật (co box theo phần nhìn thấy?).
+
+=== File CVAT for video 1.1: PhamVuTungDuong_cvat_video.zip ===
+
+  Track | Nhãn   | Frame thấy | Keyframe | KF/100 frame | Frame occluded | Lần bật outside
+      0 | person |        150 |       39 |         26.0 |             63 |               0
+              Track 0: keyframe ở frame [0, 10, 20, 30, 34, 50, 55, 56, 57, 58, 60, 61, 64, 66, 67, 70, 75, 76, 77, 78, 80, 86, 88, 89, 90, 96, 97, 98, 100, 102, 103, 104, 110, 112, 113, 120, 130, 140, 149]
+      1 | person |         89 |       23 |         25.8 |             48 |               0
+              Track 1: keyframe ở frame [61, 66, 67, 71, 81, 89, 90, 91, 92, 95, 98, 101, 103, 105, 106, 111, 113, 121, 122, 128, 131, 141, 149]
+      2 | person |          0 |        0 |          0.0 |              0 |               0
+              Track 2: keyframe ở frame []
+  [CẢNH BÁO]  Track 2 chỉ thấy 0 frame: có thể là shape rời (vẽ bằng Shape) hoặc track thừa.
+      3 | person |          0 |        0 |          0.0 |              0 |               0
+              Track 3: keyframe ở frame []
+  [CẢNH BÁO]  Track 3 chỉ thấy 0 frame: có thể là shape rời (vẽ bằng Shape) hoặc track thừa.
+      4 | person |        150 |       45 |         30.0 |             48 |               0
+              Track 4: keyframe ở frame [0, 1, 2, 3, 4, 10, 17, 20, 30, 32, 40, 44, 50, 60, 67, 68, 70, 74, 80, 83, 85, 87, 90, 91, 93, 94, 100, 108, 110, 117, 120, 123, 124, 125, 126, 127, 129, 130, 134, 138, 139, 140, 145, 148, 149]
+      5 | person |        138 |       60 |         43.5 |             65 |               2
+              Track 5: keyframe ở frame [0, 10, 20, 25, 27, 30, 36, 37, 38, 39, 40, 42, 48, 50, 52, 55, 60, 62, 64, 65, 66, 67, 68, 69, 70, 75, 76, 77, 78, 79, 80, 86, 89, 90, 92, 100, 102, 103, 105, 110, 116, 117, 118, 119, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 134, 136, 147, 148, 149]
+      6 | person |        126 |       22 |         17.5 |            126 |               3
+              Track 6: keyframe ở frame [0, 10, 20, 30, 40, 50, 60, 80, 123, 124, 125, 127, 128, 129, 130, 131, 132, 133, 134, 136, 137, 138]
+
+  Tổng: 189 keyframe / 653 frame có mặt = 28.9 keyframe / 100 frame
+  [OK]        Đọc được 7 track từ annotations.xml.
+
+=== Tóm tắt ===
+  Lỗi: 0   |   Cảnh báo: 6
+  Không có lỗi định dạng. Mở CVAT xem lại từng [CẢNH BÁO]; cảnh báo đúng ý bạn thì ghi lý do vào báo cáo.
 """
 
 from __future__ import annotations
